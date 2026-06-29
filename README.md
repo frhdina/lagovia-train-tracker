@@ -36,8 +36,9 @@ node src/index.js
 The API will be running at `http://localhost:3001`
 
 Test it in your browser:
-http://localhost:3001/health
-http://localhost:3001/departures?q=Bru
+`http://localhost:3001/health`
+
+`http://localhost:3001/departures?q=Bru`
 
 ---
 
