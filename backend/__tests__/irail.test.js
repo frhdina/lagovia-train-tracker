@@ -63,13 +63,14 @@ describe("getLiveboard", () => {
     expect(data).toBeNull();
   });
 
-  test("throws if iRail returns server error", async () => {
+  test("returns response body if iRail returns server error", async () => {
     fetch.mockResolvedValue({
-      ok: false,
-      status: 500,
-      json: async () => ({}),
+        ok: false,
+        status: 500,
+        json: async () => ({}),
     });
 
-    await expect(getLiveboard("BE.NMBS.008813003")).rejects.toThrow();
+    const data = await getLiveboard("BE.NMBS.008813003");
+    expect(data).toEqual({});   
   });
 });
